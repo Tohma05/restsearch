@@ -9,8 +9,8 @@
     <div class="p-3 mb-2 bg-dark text-white">ぐるなび レストラン検索</div>
     <form name="mainform" method = "GET">
     <div class="row justify-content-center">
-    <!-- <button onclick="getPosition();">現在地から検索</button><br> -->
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label type="button" class="btn btn-outline-primary disabled">半径を選択</label>
         <label class="btn btn-primary">
             <input type="radio" name="options" id="option0" onclick="gnaviFreewordSearch(range=1, offset=1, hit_per_page=16);"> 300m
         </label>
@@ -27,26 +27,26 @@
             <input type="radio" name="options" id="option4" onclick="gnaviFreewordSearch(range=5, offset=1, hit_per_page=16);"> 3km
         </label>
     </div>
-    <button class="btn btn-primary" onclick="gnaviFreewordSearch(range=2, offset=1, hit_per_page=16);">現在地から検索</button>
+    <!-- <button class="btn btn-primary" onclick="gnaviFreewordSearch(range=2, offset=1, hit_per_page=16);">現在地から検索</button> -->
     </div>
     </form>
 <div id="shops" class="row m-1">
-    <div id = "shopinfo0" class="col-3"></div>
-    <div id = "shopinfo1" class="col-3"></div>
-    <div id = "shopinfo2" class="col-3"></div>
-    <div id = "shopinfo3" class="col-3"></div>
-    <div id = "shopinfo4" class="col-3"></div>
-    <div id = "shopinfo5" class="col-3"></div>
-    <div id = "shopinfo6" class="col-3"></div>
-    <div id = "shopinfo7" class="col-3"></div>
-    <div id = "shopinfo8" class="col-3"></div>
-    <div id = "shopinfo9" class="col-3"></div>
-    <div id = "shopinfo10" class="col-3"></div>
-    <div id = "shopinfo11" class="col-3"></div>
-    <div id = "shopinfo12" class="col-3"></div>
-    <div id = "shopinfo13" class="col-3"></div>
-    <div id = "shopinfo14" class="col-3"></div>
-    <div id = "shopinfo15" class="col-3"></div>
+    <div id = "shopinfo0" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo1" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo2" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo3" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo4" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo5" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo6" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo7" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo8" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo9" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo10" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo11" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo12" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo13" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo14" class="col-6 col-md-4 col-lg-3"></div>
+    <div id = "shopinfo15" class="col-6 col-md-4 col-lg-3"></div>
 </div>
 
 <nav aria-label="...">
@@ -55,15 +55,6 @@
     </ul>
 </nav>
 
-<!-- <div class="row justify-content-center">
-<a href = "#" onclick="gnaviFreewordSearch(range, offset-=hit_per_page, hit_per_page);">
-    <button class="btn btn-primary">＜＜</button>
-</a>
-<div id="offsetNum"></div>
-<a href = "#" onclick="gnaviFreewordSearch(range, offset+=hit_per_page, hit_per_page);">
-    <button class="btn btn-primary">＞＞</button>
-</a>
-</div> -->
 </body>
 
 <footer>

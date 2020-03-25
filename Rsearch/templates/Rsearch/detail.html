@@ -14,16 +14,25 @@
     <div class="col-12">
     <div class="mx-auto">
     <div id="detail">
-        
-        <img src="{{ image_src }}" class="img-fluid" alt="">
-        <h1>{{ name }}</h1>
-        <h3>{{ address }}</h3>
-        <h4>{{ access }}</h4>
-        <h4>{{ tell }}</h4>
-        <h4>{{ opentime }}</h4>
-        <h4>{{ holiday }}</h4>
-        <a href="{{ url }}">pcサイトはこちら</a><br>
-        <a href="{{ url_moible }}">pcサイトはこちら</a>
+
+    <div class="text-center">
+        <div class="card mx-auto col-10 col-md-8 col-lg-6">
+            <img src="{{ image_src }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h1 class="card-title">{{ name }}</h1>
+                <h4 class="card-text">開店時間: {{ opentime }}</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{ address }}<br>{{ access }}分</li>
+                <li class="list-group-item">TEL: {{ tell }}</li>
+                <li class="list-group-item">休日: {{ holiday }}</li>
+            </ul>
+            <div class="card-body">
+                <a href="{{ url }}" class="card-link">PC用サイト</a>
+                <a href="{{ url_moible }}" class="card-link">携帯用サイト</a>
+            </div>
+        </div>
+    </div>
 
     </div>
     </div></div>

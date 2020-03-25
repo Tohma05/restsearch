@@ -40,7 +40,6 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
                     };
                     var detailUrl = `/detail/${req.response.rest[i].id}/`;
 
-                    //document.getElementById("shops").childNodes[i].innerHTML 
                     document.getElementById("shops").children[i].innerHTML
                         = `<div class="card" style="width: 18rem;">
                 <a href ="${detailUrl}">
@@ -79,16 +78,6 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
                 <a class="page-link" href="#" onclick="gnaviFreewordSearch(range, offset+=1, hit_per_page);"${ offset == offsetNum ? ' tabindex="-1" aria-disabled="true"' : ''}>Next</a>
             </li>`
             };
-
-        //     <li class="page-item disabled">
-        //     <a class="page-link" href="#" onclick="gnaviFreewordSearch(range, offset-=hit_per_page, hit_per_page);" tabindex="-1" aria-disabled="true">Previous</a>
-        // </li>
-
-        // <span id="offsetNum"></span>
-
-        // <li class="page-item">
-        //     <a class="page-link" href="#" onclick="gnaviFreewordSearch(range, offset+=hit_per_page, hit_per_page);">Next</a>
-        // </li>
 
             req.send();
 
