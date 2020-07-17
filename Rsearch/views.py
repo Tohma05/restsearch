@@ -10,7 +10,9 @@ def index(request):
 
 def detail(request, rest_id):
     # apikeyの指定
+    # keyid = "APIkeyをここに代入"
     keyid = "a2160037e19a0dc9baceeff0154a698d"
+
     # api叩く
     api = f"https://api.gnavi.co.jp/RestSearchAPI/v3/"
 
@@ -34,6 +36,6 @@ def detail(request, rest_id):
         'url_monile': rest['url_mobile'],
     }
     if context['image_src'] == "":
-        context['image_src'] = "../../static/img/noimage.png"
+        context['image_src'] = "../../static/img/noimage1.png"
     template_name = "Rsearch/detail.html"
     return render(request, template_name, context)

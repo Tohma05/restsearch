@@ -7,6 +7,9 @@ if (navigator.geolocation) {
 }
 
 // レストラン検索API関連コード
+
+
+// 位置情報関連コード
 function gnaviFreewordSearch(range, offset, hit_per_page){
 
     // 現在地を取得
@@ -17,10 +20,16 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
             var req = new XMLHttpRequest();
             var lat = position.coords.latitude;
             var lon = position.coords.longitude;
+            // var lat = 180.00;
+            // var lon = 180.00;
+
+            // apikeyの指定
+            // var keyid = "APIkeyをここに代入";
             var keyid = "a2160037e19a0dc9baceeff0154a698d";
+
             url = `https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=${keyid}&latitude=${lat}&longitude=${lon}&range=${range}&offset_page=${offset}&hit_per_page=${hit_per_page}`
         
-            url = encodeURI(url); // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+            url = encodeURI(url); //参考： https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
             
             req.responseType = 'json'
             
@@ -28,6 +37,17 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
         
             req.onload = function(){
 
+                //
+                var code;
+                var length;
+
+                if (typeof req.response.error.code === 'undefined'){
+                    alert("該当する店舗がありません");
+                }
+                else 
+                {
+
+                // if (typeof req.response.rest.length !== 'undefined'){
                 for (l = 0; l < 16; l++) {
                     document.getElementById("shops").children[l].innerHTML = '';
                 };
@@ -35,8 +55,9 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
                     //APIで取得した店の名前とアクセス、画像を表示
                     //それぞれをぐるなびのサイトにリンクしている
                     var imageSource = req.response.rest[i].image_url.shop_image1
+                    // 店舗画像がなかった場合
                     if (imageSource == "") {
-                        imageSource = "../../static/img/noimage.png"
+                        imageSource = "../../static/img/noimage1.png"
                     };
                     var detailUrl = `/detail/${req.response.rest[i].id}/`;
 
@@ -74,6 +95,12 @@ function gnaviFreewordSearch(range, offset, hit_per_page){
                     // document.getElementById("offsetNum").innerHTML += `<li class="page-item"><a class="page-link" href="#">${i}</a></li>`
                 };
             }
+            // こここここ
+        }
+        // kokokoko2
+        // }else{
+        //     alert("該当する店舗がありません");
+        // };
             document.getElementById("offsetNum").innerHTML += `<li class="page-item${ offset == offsetNum ? ' disabled' : '' }">
                 <a class="page-link" href="#" onclick="gnaviFreewordSearch(range, offset+=1, hit_per_page);"${ offset == offsetNum ? ' tabindex="-1" aria-disabled="true"' : ''}>Next</a>
             </li>`

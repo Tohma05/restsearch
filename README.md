@@ -26,6 +26,11 @@ Python 3.6.9
 
 ## アプリケーション機能
 
+## 注意点
+APIキーを伏せているため、お手数ですが以下の変数keyidに各自ご用意いただいたAPIキーを代入してください。
+- `\Rsearch\views.py`の13行目の`apikey`
+- `\Rsearch\static\js\index.js`の22行目の`apikey`
+
 ### 機能一覧
 - レストラン検索：ぐるなびAPIを使用して、現在地周辺の飲食店を検索する。
 - レストラン情報取得：ぐるなびAPIを使用して、飲食店の詳細情報を取得する。 
@@ -38,3 +43,13 @@ Python 3.6.9
 - Django 3.0.3
 - ぐるなびレストラン検索API
 - Geolocation API
+
+## 使い方
+```
+python3 manage.py collectstatic
+python3 manage.py runserver
+```
+
+## 今後
+- `index.js`の`navigator.geolocation.getCurrentPosition`の関数が複数の処理を含んでおり読みにくいコードになっているため、今後そこをそれぞれ、リクエスト処理、各アイテム描画処理、カウント処理、ページング処理などの関数にわけていこうと思っています。
+- 検索結果が0件の時の挙動を改善し、よりユーザー目線に立った開発をしていきます。
